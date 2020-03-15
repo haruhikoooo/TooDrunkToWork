@@ -24,10 +24,13 @@
 
 .wrapper{
   display: flex;
+  background-image: image-url("drinks-2578446_1280.webp");
+  background-size: cover;
+  background-position: center;
   .side-bar{
     width: 250px;
     height: calc(100vh - 100px);
-    background-color: #a0ffff;
+    background-color: rgba(255,255,255,0.6);
     position: relative;
     .party-list{
       overflow: scroll;
@@ -54,7 +57,7 @@
       }
     }
     #current{
-      background-color: #d76fc4;
+      background-color: rgba(245, 46, 212, 0.6);
     }
     .new-party{
       display: block;
@@ -62,7 +65,7 @@
       height: 80px;
       background-color: #cc28ae;
       text-decoration: none;
-      color: #d4d1d4;
+      color: #682303;
       text-align: center;
       line-height: 40px;
       font-size: 22px;
@@ -81,15 +84,12 @@
   .main{
     width: calc(100vw - 250px);
     height: calc(100vh - 100px);
-    background-image: image-url("drinks-2578446_1280.webp");
-    background-size: cover;
-    background-position: center;
-    overflow: scroll;
+    background-color: rgba(0,0,0,0.6);
     .top-contents{
       position: fixed;
       height: 80px;
         &__content{
-        margin: 10px 0 0 10px;
+        margin: 10px 0 0 15px;
         padding: 5px 15px;
         background-color: #e236c0;
         border-radius: 8px;
@@ -106,12 +106,13 @@
       }
     }
     .drink-list{
-      padding-top: 100px;
-      padding-bottom: 80px;
-      height: calc(100vh - 100px);
+      margin-top: 80px;
+      margin-bottom: 80px;
+      height: calc(100vh - 100px - 80px - 100px);
+      overflow: scroll;
       .drink{
         &__content{
-          margin: 10px 0 0 10px;
+          margin: 10px 0 10px 15px;
           padding: 5px 15px;
           background-color: #1cd4f6;
           border-radius: 8px;
@@ -137,9 +138,9 @@
       }
     }
     .footer{
-      height: 80px;
+      height: 100px;
       width: 100%;
-      background-color: #c83bb4;
+      background-color: rgba(245, 46, 212, 0.6);
       position: fixed;
       bottom: 0;
     }
