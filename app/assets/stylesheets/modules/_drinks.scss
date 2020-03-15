@@ -65,26 +65,27 @@
       height: 80px;
       background-color: #cc28ae;
       text-decoration: none;
-      color: #682303;
+      color: #fcf6fc;
       text-align: center;
-      line-height: 40px;
-      font-size: 22px;
-      font-family: 'Perfograma';
       border-radius: 10px;
       position: absolute;
       bottom: 10px;
       right: 0;
       left: 0;
       margin: auto;
+      line-height: 80px;
       &:hover{
         box-shadow: 12px 12px 20px #822761;
+      }
+      &__icon{
+        font-size: 30px;
       }
     }
   }
   .main{
     width: calc(100vw - 250px);
     height: calc(100vh - 100px);
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.5);
     .top-contents{
       position: fixed;
       height: 80px;
@@ -139,10 +140,46 @@
     }
     .footer{
       height: 100px;
-      width: 100%;
+      width: calc(100vw - 250px);
       background-color: rgba(245, 46, 212, 0.6);
       position: fixed;
       bottom: 0;
+      display: flex;
+      font-size: 12px;
+      color: #fcf6fc;
+      justify-content: space-between;
+      align-items: center;
+      .input-form{
+        width: calc(100vw - 250px - 100px);
+        margin-bottom: 10px;
+        &__top{
+          display: flex;
+          .form-content{
+            margin-left: 5px;
+            width: 100%;
+          }
+        }
+        &__bottom{
+          margin-left: 5px;
+        }
+        .form-text{
+          border-style: none;
+          width: 100%;
+          background-color: rgb(238, 180, 228);
+        }
+      }
+      .send-btn{
+        font-size: 60px;
+        margin-right: 20px;
+        color: rgba(253, 207, 81, 0.8);
+        &__submit{
+          display: none;
+        }
+        &__icon:active{
+          transform: rotate(-45deg);
+        }
+      }
+    
     }
   }
 }

@@ -82,4 +82,25 @@
       .drink__info
         5/3 19:21
   .footer
-  
+    .input-form
+      .input-form__top
+        .form-content
+          .form-info
+            お酒
+          %input{type: "text", class: "form-text"}
+        .form-content
+          .form-info
+            度数
+          %input{type: "text", placeholder: "0.0 ~ 100,0 %", class: "form-text"}
+        .form-content
+          .form-info
+            飲酒量
+          %input{type: "text", placeholder: "0 ~ 1000 ml", class: "form-text"}
+      .input-form__bottom
+        .input-form__bottom--comment
+          コメント
+        %input{type: "text", class: "form-text"}
+    .send-btn
+      %label
+        = icon('fas', 'beer', class: "send-btn__icon")
+        %input{type: "submit", value: "飲んだ!", class: "send-btn__submit"}
