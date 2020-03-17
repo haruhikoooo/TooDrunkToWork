@@ -2,7 +2,13 @@
   .title
     TOO DRUNK TO WORK
   .user-box
-    = link_to "#", class: "user-box__btn" do
-      haruhikoooo
-    = link_to "#", class: "user-box__btn" do
-      sign out
+    - if user_signed_in?
+      = link_to edit_user_registration_path(current_user), class: "user-box__btn" do
+        = current_user.name
+      = link_to destroy_user_session_path, method: :delete, class: "user-box__btn" do
+        ログアウト
+    - else
+      = link_to new_user_session_path, class: "user-box__btn" do
+        ログイン
+      = link_to new_user_registration_path, class: "user-box__btn" do
+        新規登録
