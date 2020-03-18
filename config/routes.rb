@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "drinks#index"
 
   resources :users, only: [:edit, :update]
+  resources :parties, only: [:new, :create]
 end

@@ -1,0 +1,3 @@
+=form_with(model: @party, local: true) do |f|
+  = f.text_field :name, class: "party-form__input", placeholder: "飲み会名を入力してください"
+  = f.submit "Save", class: "party-form__action-btn"
