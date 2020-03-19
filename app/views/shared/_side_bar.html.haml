@@ -1,59 +1,13 @@
 .side-bar
   .party-list
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          送迎会
-        .party__date
-          2020/03/14
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          歓迎会
-        .party__date
-          2020/04/05
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          晩酌
-        .party__date
-          2020/04/06
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          鍋パ
-        .party__date
-          2020/04/09
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          チーズフォンデュ会チーズフォンデュ会チーズフォンデュ会
-        .party__date
-          2020/04/14
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          同僚
-        .party__date
-          2020/04/17
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          豊川
-        .party__date
-          2020/04/21
-    .party-list__box
-      = link_to "#", class: "party" do
-        .party__name
-          BBQ
-        .party__date
-          2020/04/29
-    .party-list__box#current
-      = link_to "#", class: "party" do
-        .party__name
-          宅飲み
-        .party__date
-          2020/05/03
+    -current_user.parties.each do |party|
+      .party-list__box
+        = link_to "#", class: "party" do
+          .party__name
+            = party.name
+          .party__date
+            = party.created_at.strftime("%Y/%m/%d")
+
   = link_to new_party_path, class: "new-party" do
     飲み会を追加
     = icon('fas', 'glass-cheers', class: "new-party__icon")

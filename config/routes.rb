@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "drinks#index"
+  root "parties#index"
 
   resources :users, only: [:edit, :update]
-  resources :parties, only: [:new, :create]
+  resources :parties, only: [:index, :new, :create]
 end
