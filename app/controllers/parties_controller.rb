@@ -7,8 +7,8 @@ class PartiesController < ApplicationController
   end
 
   def create
-    Party.create(party_params)
-    redirect_to root_path
+    party = Party.create(party_params)
+    redirect_to party_drinks_path(party.id)
   end
 
   private
