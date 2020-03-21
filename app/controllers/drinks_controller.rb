@@ -1,9 +1,13 @@
 class DrinksController < ApplicationController
   before_action :set_party
   def index
-    @drink = Drink.new
-    @drinks = @party.drinks.includes(:user)
-    sum_alcohol(@drinks)
+    if current_user.id == @party.user_id
+      @drink = Drink.new
+      @drinks = @party.drinks.includes(:user)
+      sum_alcohol(@drinks)
+    else
+      redirect_to root_path
+    end
   end
 
   def create
