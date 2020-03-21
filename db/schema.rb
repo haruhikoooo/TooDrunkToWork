@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_123930) do
+ActiveRecord::Schema.define(version: 2020_03_19_114612) do
+
+  create_table "drinks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "amount", null: false
+    t.decimal "content", precision: 4, scale: 1, null: false
+    t.text "comment"
+    t.bigint "user_id"
+    t.bigint "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_drinks_on_party_id"
+    t.index ["user_id"], name: "index_drinks_on_user_id"
+  end
 
   create_table "parties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,5 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_123930) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "drinks", "parties"
+  add_foreign_key "drinks", "users"
   add_foreign_key "parties", "users"
 end

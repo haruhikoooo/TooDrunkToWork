@@ -1,8 +1,8 @@
 .side-bar
   .party-list
-    -current_user.parties.each do |party|
+    - current_user.parties.each do |party|
       .party-list__box
-        = link_to "#", class: "party" do
+        = link_to party_drinks_path(party.id), class: "party" do
           .party__name
             = party.name
           .party__date

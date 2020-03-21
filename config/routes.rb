@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root "parties#index"
 
   resources :users, only: [:edit, :update]
-  resources :parties, only: [:index, :new, :create]
+  resources :parties, only: [:index, :new, :create] do
+    resources :drinks, only: [:index, :create]
+  end
 end

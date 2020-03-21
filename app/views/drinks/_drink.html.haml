@@ -1,0 +1,10 @@
+.drink
+  .drink__content
+    .drink__content--top
+      = drink.name
+    .drink__content--center
+      = "飲酒量: #{drink.amount}ml 度数: #{drink.content}% アルコール量: #{drink.alcohol}g"
+    .drink__content--bottom
+      = drink.comment
+  .drink__info
+    = drink.created_at.strftime("%m/%d %H:%M")
