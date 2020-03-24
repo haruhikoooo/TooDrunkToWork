@@ -39,18 +39,19 @@ class DrinksController < ApplicationController
   end
 
   def countdown(drinks)
-    @remaining_time = 0
+    remaining_time = 0
     drinks.each do |drink|
-      @remaining_time += drink.created_at - Time.now + ( drink.alcohol / (current_user.weight * 0.1) * 60 * 60 )
-      @remaining_time = 0 if @remaining_time < 0
+      remaining_time += drink.created_at - Time.now + ( drink.alcohol / (current_user.weight * 0.1) * 60 * 60 )
+      remaining_time = 0 if remaining_time < 0
     end
-    @remaining_time = sec_to_hour(@remaining_time)
+    @timer = sec_to_hour(remaining_time)
   end
 
   def sec_to_hour(time)
-    sec = (time % 60).floor
-    min = (( time % 3600 ) / 60).floor
-    hour = (time / 3600).floor
-    time = "#{hour}時間#{min}分#{sec}秒"
+    timer = {}
+    timer[:sec] = (time % 60).floor
+    timer[:min] = (( time % 3600 ) / 60).floor
+    timer[:hour] = (time / 3600).floor
+    return timer
   end
 end
