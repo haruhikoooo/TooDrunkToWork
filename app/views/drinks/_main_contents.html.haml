@@ -6,15 +6,15 @@
       .top-contents__content--down
         = "#{@timer[:hour]}時間#{@timer[:min]}分#{@timer[:sec]}秒"
     .top-contents__content#sum
-      .top-contents__content--up
+      .top-contents__content--up#sum-text
         総アルコール量
-      .top-contents__content--down
+      .top-contents__content--down#sum-alcohol{data: {sumalcohol: @sum_alcohol}}
         = "#{@sum_alcohol}g"
 
   .drink-list
     = render partial: "drinks/drink", collection: @drinks
 
-  = form_with(model: [@party, @drink], local: true, class: "footer") do |f|
+  = form_with(model: [@party, @drink], local: true, class: "footer", id: "new-drink") do |f|
     .input-form
       .input-form__top
         .form-content

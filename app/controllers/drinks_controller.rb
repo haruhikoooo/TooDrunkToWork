@@ -13,8 +13,10 @@ class DrinksController < ApplicationController
 
   def create
     @drink = @party.drinks.new(drink_params)
-    if @party.save
-      redirect_to party_drinks_path(@party)
+    if @drink.save
+      respond_to do |format|
+        format.json
+      end
     else
       @drinks = @party.drinks.includes(:user)
       render :index
