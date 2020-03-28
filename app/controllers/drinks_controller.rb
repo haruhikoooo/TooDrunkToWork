@@ -5,7 +5,6 @@ class DrinksController < ApplicationController
       @drink = Drink.new
       @drinks = @party.drinks.includes(:user)
       sum_alcohol(@drinks)
-      countdown(@drinks)
     else
       redirect_to root_path
     end
@@ -40,20 +39,4 @@ class DrinksController < ApplicationController
     return @sum_alcohol
   end
 
-  def countdown(drinks)
-    remaining_time = 0
-    drinks.each do |drink|
-      remaining_time += drink.created_at - Time.now + ( drink.alcohol / (current_user.weight * 0.1) * 60 * 60 )
-      remaining_time = 0 if remaining_time < 0
-    end
-    @timer = sec_to_hour(remaining_time)
-  end
-
-  def sec_to_hour(time)
-    timer = {}
-    timer[:sec] = (time % 60).floor
-    timer[:min] = (( time % 3600 ) / 60).floor
-    timer[:hour] = (time / 3600).floor
-    return timer
-  end
 end

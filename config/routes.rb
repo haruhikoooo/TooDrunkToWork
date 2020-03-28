@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :parties, only: [:index, :new, :create] do
     resources :drinks, only: [:index, :create]
+    namespace :api do
+      resources :drinks, only: [:index], defaults: {format: 'json'}
+    end
   end
 end
