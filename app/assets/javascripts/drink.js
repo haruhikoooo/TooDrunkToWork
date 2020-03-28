@@ -56,6 +56,15 @@ $(function(){
       return html;
   }
 
+  $('.party').each(function(){
+    var $href = $(this).attr('href');
+    if(location.href.match($href)) {
+      $(this).addClass('current');
+    } else {
+      $(this).removeClass('current');
+    }
+  });
+
   $('#new-drink').on('submit', function(e){
     e.preventDefault();
     var url = $(this).attr('action');
@@ -117,6 +126,9 @@ $(function(){
     })
   }
 
-  $('.drink-list').animate({ scrollTop: $('.drink-list')[0].scrollHeight});
-  setInterval(countdown,1000)
+  if (document.location.href.match(/\/parties\/\d+\/drinks/)){
+    $('.drink-list').animate({ scrollTop: $('.drink-list')[0].scrollHeight});
+    setInterval(countdown,1000);
+  }
+
 });
