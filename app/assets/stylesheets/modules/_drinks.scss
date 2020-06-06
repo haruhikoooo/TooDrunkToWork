@@ -221,14 +221,29 @@
       margin: 10px;
       font-size: 24px;
     }
-    &__submit{
-      margin: 10px;
+    &__delete{
+      margin: 30px 10px 0;
+      &__btn{
+        margin-top: 5px;
+        padding: 0 7px;
+        color: #682303;
+        border: none;
+        background-color: rgba(204, 40, 174, 0.3);
+        border-radius: 2px;
+      }
     }
     .field{
       margin: 10px;
     }
     .actions{
       margin: 10px;
+      &__btn{
+        padding: 0 7px;
+        color: #682303;
+        border: none;
+        background-color: rgba(204, 40, 174, 0.3);
+        border-radius: 2px;
+      }
     }
   }
 }

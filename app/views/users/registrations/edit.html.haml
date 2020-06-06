@@ -16,7 +16,7 @@
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
       .actions
-        = f.submit "更新"
-    %p
+        = f.submit "更新", class: "actions__btn"
+    .user-form__delete
       アカウントを削除する
-      #{button_to "削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+      #{button_to "削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete, class: "user-form__delete__btn"}
