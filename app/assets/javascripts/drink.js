@@ -8,7 +8,7 @@ $(function(){
     var sec = Math.floor(time % 60)
     var min = Math.floor(( time % 3600 ) / 60)
     var hour = Math.floor(time / 3600)
-    var timer = `${hour}時間${min}分${sec}秒`
+    var timer = hour + "時間" + min + "分" + sec + "秒"
     return timer
   }
 
