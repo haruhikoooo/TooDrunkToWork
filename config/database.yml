@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: TooDrunkToWork_production
   username: TooDrunkToWork
   password: <%= ENV['TOODRUNKTOWORK_DATABASE_PASSWORD'] %>
