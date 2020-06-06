@@ -7,8 +7,13 @@ class PartiesController < ApplicationController
   end
 
   def create
-    party = Party.create(party_params)
-    redirect_to party_drinks_path(party.id)
+    party = Party.new(party_params)
+    if party.save
+      redirect_to party_drinks_path(party.id)
+    else
+      @party = Party.new
+      render :new
+    end
   end
 
   private
