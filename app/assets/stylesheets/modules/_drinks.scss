@@ -114,7 +114,9 @@
       height: calc(100vh - 100px - 80px - 100px);
       overflow: scroll;
       .drink{
+        width: 100%;
         &__content{
+          max-width: calc(100% - 180px);
           margin: 10px 0 10px 15px;
           padding: 5px 15px;
           background-color: #1cd4f6;
